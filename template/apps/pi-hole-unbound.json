@@ -27,6 +27,11 @@
       "name": "FTLCONF_dns_dnssec"
     },
     {
+      "default": "single",
+      "label": "FTLCONF_dns_listeningMode",
+      "name": "FTLCONF_dns_listeningMode"
+    },
+    {
       "default": "80",
       "description": "Internal web server port. Keep this set to 80 unless you also change the container port mapping.",
       "label": "FTLCONF_webserver_port",
