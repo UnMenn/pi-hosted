@@ -25,7 +25,13 @@
     		"default": "true",
     		"label": "FTLCONF_dns_dnssec",
     		"name": "FTLCONF_dns_dnssec"
-  		}
+  		},
+      {
+        "default": "80",
+        "description": "Internal web server port. Keep this set to 80 unless you also change the container port mapping.",
+        "label": "FTLCONF_webserver_port",
+        "name": "FTLCONF_webserver_port"
+      }
 	],
 	"image_arm32": "mpgirro/pihole-unbound:latest",
 	"image_arm64": "mpgirro/pihole-unbound:latest",
