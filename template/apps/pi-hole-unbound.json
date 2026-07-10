@@ -11,27 +11,27 @@
 			"name": "TZ"
 		},
 		{
-    		"default": "",
-    		"description": "Pi-hole admin password. Leave blank to generate a random password. Run docker logs pihole | grep random to find your random password.",
-    		"label": "FTLCONF_webserver_api_password",
-    		"name": "FTLCONF_webserver_api_password"
-  		},
+      "default": "",
+      "description": "Pi-hole admin password. Leave blank to generate a random password. Run docker logs pihole | grep random to find your random password.",
+      "label": "FTLCONF_webserver_api_password",
+      "name": "FTLCONF_webserver_api_password"
+    },
 		{
-    		"default": "127.0.0.1#5335",
-    		"label": "FTLCONF_dns_upstreams",
-    		"name": "FTLCONF_dns_upstreams"
-  		},
-  		{
-    		"default": "true",
-    		"label": "FTLCONF_dns_dnssec",
-    		"name": "FTLCONF_dns_dnssec"
-  		},
-      {
-        "default": "80",
-        "description": "Internal web server port. Keep this set to 80 unless you also change the container port mapping.",
-        "label": "FTLCONF_webserver_port",
-        "name": "FTLCONF_webserver_port"
-      }
+      "default": "127.0.0.1#5335",
+      "label": "FTLCONF_dns_upstreams",
+      "name": "FTLCONF_dns_upstreams"
+    },
+    {
+      "default": "true",
+      "label": "FTLCONF_dns_dnssec",
+      "name": "FTLCONF_dns_dnssec"
+    },
+    {
+      "default": "80",
+      "description": "Internal web server port. Keep this set to 80 unless you also change the container port mapping.",
+      "label": "FTLCONF_webserver_port",
+      "name": "FTLCONF_webserver_port"
+    }
 	],
 	"image_arm32": "mpgirro/pihole-unbound:latest",
 	"image_arm64": "mpgirro/pihole-unbound:latest",
