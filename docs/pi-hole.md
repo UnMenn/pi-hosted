@@ -51,9 +51,12 @@ Once deployed go to [Post Installation](#post-installation) section.
 
 To install Pi-Hole with Unbound option, the following settings needs to be set:
 
-- **ServerIP** -> This is the IP of your Raspberry Pi, so docker can configure the DNS server properly
 - **TZ** -> Time zone setting so all logs are written in the correct time
-- **DNSSEC** -> Option to enable or disable [DNSSEC](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions), default configuration is Enabled.
+- **FTLCONF_webserver_api_password** -> http://pi.hole/admin password. Leave this blank to generate a random password automatically, then run: `sh docker logs pihole | grep random` to find your random password.
+- **FTLCONF_dns_upstreams** -> Upstream DNS server(s) used by Pi-hole. The default value (`127.0.0.1#5335`) points to the included Unbound resolver running inside the container.
+- **FTLCONF_dns_dnssec** -> Enable or disable [DNSSEC](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions) validation. DNSSEC is enabled by default.
+- **FTLCONF_dns_listeningMode** -> Controls which interfaces Pi-hole listens on for DNS requests. The default configuration is suitable for most Docker deployments.
+- **FTLCONF_webserver_port** -> Internal Pi-hole web server port. Keep this set to `80` unless you also change the container port mapping.
 
 By default only ports **53** (DNS), **1010** (HTTP Web Interface), **4443** (HTTPS Web Interface) are opened.
 
@@ -61,6 +64,7 @@ You can open the following ports for extra functionalities:
 
 - **22/TCP** -> Enable SSH connection to the docker _(not recommended)_
 - **67/UDP** -> Open port for DHCP Server
+- **5335/TCP** -> Enable unbound access on local server
 
 To open extra ports, click in `Show advanced options` just above `Deploy the container` button and then click in `map additional port`. Enter Host Port first then Container Port after and select the protocol. The ports described above are for Container Port, you can use the same number or a different one on the host (although it's best to keep port 67 for DHCP).
 
