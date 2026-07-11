@@ -6,13 +6,12 @@
 	"description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole. This version has Ubound software installed on it so you don't need to rely on external DNS providers. When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article <a href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'>here</a>",
 	"env": [
 		{
-			"default": "Europe\\London",
+			"default": "Europe/London",
 			"label": "TZ",
 			"name": "TZ"
 		},
 		{
       "default": "",
-      "description": "Pi-hole admin password. Leave blank to generate a random password. Run docker logs pihole | grep random to find your random password.",
       "label": "FTLCONF_webserver_api_password",
       "name": "FTLCONF_webserver_api_password"
     },
